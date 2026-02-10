@@ -1,12 +1,10 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Sagiv Tirosh
+- **Dot Number**: tirosh.1
+- **Due Date**: 02/05/2026 @ 12:40
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -29,8 +27,6 @@ implement.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
-
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -52,8 +48,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
-
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -66,8 +60,6 @@ project. Specifically, students should be able to:
    discipline
 
 ## Assignment Rubric: 10 Points
-
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -106,23 +98,21 @@ Below is further rationale/explanation for the rubric items above:
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+Hi, my name is Sagiv Tirosh. I am currently studying CSE and minoring in Mathematics.
+I really want to end up combining my software knowledge with Business and learn
+further into Finance in Graduate School. Other than that, I really like to play
+sports and learn from the stock market. Later on, after grad school, I would
+like to work in a Finance company and learn from older people on their
+experiences. I would like to share my backgrounf in Software Development and AI
+and hear from other people about their experiences.
 
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
 that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
-
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -142,8 +132,6 @@ list-like components that have different ways of manipulating the data. Think
 about different ways you might allow a client to manipulate your component.
 
 ### Example Component
-
-<!-- TODO: review this example component then delete this comment -->
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -211,68 +199,111 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: Banking system
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - The purpose of this component is to manage a collection of bank accounts, associating unique account identifiers with their respective monetary balances. It provides a minimal kernel for manipulating individual account data and a secondary interface for higher-level banking operations like transfers, interest accrual, and bulk reporting.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
-  - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
-  - **Additional Considerations** (*note*: "I don't know" is an acceptable
-    answer for each of the following questions):
-    - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Would this component rely on any internal classes (e.g., `Map.Pair`)?
-      Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Would this component need any enums or constants (e.g.,
-      `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Can you implement your secondary methods using your kernel methods?
-      Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+    - void addAccount(String id): Adds a new account with a balance of zero to the system.
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
-  - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
-  - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
-  - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
-  - **Additional Considerations** (*note*: "I don't know" is an acceptable
-    answer for each of the following questions):
-    - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Would this component rely on any internal classes (e.g., `Map.Pair`)?
-      Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Would this component need any enums or constants (e.g.,
-      `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Can you implement your secondary methods using your kernel methods?
-      Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+    - void removeAccount(String id): Removes an existing account from the system.
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
-  - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
-  - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - int updateBalance(String id, int amount): Adjusts the balance of the account by amount (positive or negative) and returns the new balance.
+
+    - int balance(String id): Reports the current balance of the specified account.
+
+    - boolean hasAccount(String id): Reports whether an account with the given ID exists in the system.
+
+    - int size(): Reports the total number of accounts in the system.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - void transfer(String fromId, String toId, int amount): Atomically moves funds from one account to another.
+    - void applyInterest(double rate): Multiplies all account balances by a given interest rate.
+
+    - int totalAssets(): Calculates the sum of all balances currently held in the system.
+
+    - void clear(): Resets the system to hold zero accounts.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. As a standard OSU-style component, it must support mutation. The kernel methods updateBalance and addAccount directly modify the state of the system, and it would likely inherit from Standard, requiring clear and transferFrom to be implemented.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. Internally, the representation would likely use a Map<String, Integer> to store the relationship between account IDs and balances. To iterate through the system (e.g., for totalAssets), it would likely rely on a Pair or Iterator over the account entries.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. It might include a constant like MIN_BALANCE (e.g., 0) to enforce business logic across implementations, or an AccountStatus enum if the system were expanded to track active/frozen accounts.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. The secondary methods can be built entirely upon the kernel's ability to check for existence and update balances. For example, to implement transfer, you would first call hasAccount for both IDs, then use updateBalance(fromId, -amount) followed by updateBalance(toId, amount).
+
+- Component Design #2: Stock representation
+  - **Description**:
+    - The purpose of this component is to model a specific publicly traded stock. It maintains the current market price and a history of price points. The kernel focus is on the raw data of price movements, while the secondary methods provide analytical tools like moving averages and price volatility.
+  - **Kernel Methods**:
+    - void updatePrice(int price): Adds a new price point to the stock's history and updates the current price. Prices are stored in cents to avoid floating-point errors.
+
+    - int currentPrice(): Reports the most recent price of the stock.
+
+    - int priceAt(int timeStep): Reports the price at a specific point in the history (where 0 is the initial price).
+
+    - int historySize(): Reports the total number of price recordings currently stored.
+
+    - String tickerSymbol(): Reports the unique ticker symbol (e.g., "AAPL") for this stock.
+  - **Secondary Methods**:
+    - int priceChange(): Returns the difference between the current price and the previous price.
+
+    - double movingAverage(int interval): Calculates the average price over the last n price points.
+
+    - int maxPrice(): Returns the highest price recorded in the history.
+
+    - boolean isBullish(): Returns true if the current price is higher than the average of its history.
+  - **Additional Considerations** (*note*: "I don't know" is an acceptable
+    answer for each of the following questions):
+    - Would this component be mutable? Answer and explain:
+      - Yes. Stock prices are dynamic by nature. The updatePrice method allows the object to evolve as the market changes. Furthermore, following the OSU Standard interface, it must be mutable to support transferFrom and clear.
+    - Would this component rely on any internal classes (e.g., `Map.Pair`)?
+      Answer and explain:
+      - No. The history can be represented using a simple List or a sequence of integers. It does not inherently require a key-value mapping unless we were tracking multiple stocks within one object.
+    - Would this component need any enums or constants (e.g.,
+      `Program.Instruction`)? Answer and explain:
+      - I don't know. One could argue for an Exchange enum (e.g., NYSE, NASDAQ) to categorize where the stock is traded, but for a basic representation, constants aren't strictly required.
+    - Can you implement your secondary methods using your kernel methods?
+      Answer, explain, and give at least one example:
+      - Yes. All analytical data can be derived from the history and current price. For example, maxPrice can be implemented by using historySize to determine how many times to loop, calling priceAt for each index, and keeping track of the highest value found.
+
+- Component Design #3: Investing
+  - **Description**:
+    - The purpose of this component is to manage a collection of investment holdings. It tracks how many shares of various stocks are owned and the "cost basis" (the total price paid) for those shares. It allows for buying and selling assets and calculating the overall performance of the portfolio.
+  - **Kernel Methods**:
+    - void purchase(String ticker, int quantity, int pricePerShare): Adds a specified quantity of a stock to the portfolio and updates the total cost basis.
+
+    - void sell(String ticker, int quantity): Removes a specified quantity of shares from the portfolio.
+
+    - int sharesOwned(String ticker): Reports the total number of shares held for a specific ticker.
+
+    - int totalCostBasis(String ticker): Reports the total amount of money spent to acquire the current shares of a specific ticker.
+
+    - void removeHolding(String ticker): Completely removes a ticker from the portfolio (used when shares reach zero).
+  - **Secondary Methods**:
+    - double weightOf(String ticker, int currentPrice): Calculates what percentage of the total portfolio value a specific stock represents.
+
+    - int unrealizedGain(String ticker, int currentPrice): Calculates the profit or loss for a holding based on its current market price compared to its cost basis.
+
+    - boolean isDiversified(): Returns true if no single holding exceeds a certain percentage (e.g., 20%) of the total portfolio value.
+
+    - void rebalance(String ticker, double targetWeight, int totalPortfolioValue): Suggests or executes the number of shares to buy/sell to reach a target allocation.
+  - **Additional Considerations** (*note*: "I don't know" is an acceptable
+    answer for each of the following questions):
+    - Would this component be mutable? Answer and explain:
+      - Yes. An investment portfolio is inherently dynamic. Every trade (buy or sell) changes the state of the holdings and the cost basis. It would also need to implement clear() to liquidate or reset the portfolio.
+    - Would this component rely on any internal classes (e.g., `Map.Pair`)?
+      Answer and explain:
+      - Yes. This component would likely use a Map <String, Holding> where Holding is an internal class or record storing both the quantity and the cost basis for that specific ticker.
+    - Would this component need any enums or constants (e.g.,
+      `Program.Instruction`)? Answer and explain:
+      - Yes. It might use an enum for TransactionType (BUY, SELL, DIVIDEND) if the kernel were expanded to track a ledger of all past actions.
+    - Can you implement your secondary methods using your kernel methods?
+      Answer, explain, and give at least one example:
+      - Yes. For example, unrealizedGain can be implemented by calling sharesOwned(ticker) and totalCostBasis(ticker). The logic would be: (sharesOwned * currentPrice) - totalCostBasis.
 
 ## Post-Assignment
 
@@ -280,8 +311,6 @@ The following sections detail everything that you should do once you've
 completed the assignment.
 
 ### Changelog
-
-<!-- TODO: create CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -299,13 +328,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## YYYY.MM.DD
+## 2026.02.05
 
 ### Added
 
-- Designed a <!-- insert name of component 1 here --> component
-- Designed a <!-- insert name of component 2 here --> component
-- Designed a <!-- insert name of component 3 here --> component
+- Designed a Banking system component
+- Designed a Stock representation component
+- Designed an investing component
 ```
 
 Here `YYYY.MM.DD` would be the date of your submission, such as 2024.04.21.
@@ -320,8 +349,6 @@ of development.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
-
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
 this [Markdown to PDF guide][markdown-to-pdf-guide]. However, PDFs should be
@@ -330,11 +357,7 @@ all your work is there before submitting. For future assignments, you will
 just be submitting a link to a pull request. This will be the only time
 you have to submit any PDFs.
 
-<!-- TODO: upload a PDF of this document and the CHANGELOG to Carmen then delete this comment -->
-
 ### Peer Review
-
-<!-- TODO: review the peer review guidelines then delete this comment -->
 
 Following the completion of this assignment, you will be assigned three
 students' component brainstorming assignments for review. Your job during the
@@ -360,8 +383,6 @@ PDF to read this rubric as a table).
 If you'd like to give feedback for this assignment (or any assignment, really),
 make use of [this survey][survey]. Your feedback helps make assignments
 better for future students.
-
-<!-- TODO: follow the link to share your feedback then delete this comment -->
 
 [example-components]: https://therenegadecoder.com/code/the-never-ending-list-of-small-programming-project-ideas/
 [markdown-to-pdf-guide]: https://therenegadecoder.com/blog/how-to-convert-markdown-to-a-pdf-3-quick-solutions/
