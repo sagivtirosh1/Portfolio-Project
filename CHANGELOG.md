@@ -85,6 +85,16 @@ the following form: YYYY.0M.0D.
 - Designed a Stock representation component
 - Designed an investing component
 
+## 2026.03.10
+
+### Added
+
+- Designed kernel and enhanced interfaces for StockKernel and Stock components
+
+### Updated
+
+- Changed design to include descriptions for each interface method.
+
 [unreleased]: https://github.com/jrg94/portfolio-project/compare/v2024.08.07...HEAD
 [2024.08.07]: https://github.com/jrg94/portfolio-project/compare/v2024.01.07...v2024.08.07
 [2024.01.07]: https://github.com/jrg94/portfolio-project/releases/tag/v2024.01.07
