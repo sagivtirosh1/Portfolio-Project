@@ -1,8 +1,8 @@
 # Portfolio Part 5: Kernel Implementation
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) and delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) and delete this comment -->
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) and delete this comment -->
+- **Name**: Sagiv Tirosh
+- **Dot Number**: tirosh.1
+- **Due Date**: 04/15/2026 @ 12:40PM
 
 ## Assignment Overview
 
@@ -39,8 +39,6 @@ of the file. Feel free to reference any of your kernel implementations for
 examples of these.
 
 ## Assignment Checklist
-
-<!-- TODO: browse the checklist then delete this comment -->
 
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
@@ -120,7 +118,13 @@ Below is further rationale/explanation for the rubric items above:
 > discuss how that representation will be restricted (i.e., by convention)
 > and interpreted (i.e., by correspondence).
 
-<!-- TODO: select a representation and explain why -->
+Choice of Representation: The representation for Stock1L is a "thin" layer implemented using a String for the ticker symbol and a List<Integer> for the price history. This selection is justified by the performance requirements of the kernel methods. An ArrayList implementation for the history provides $O(1)$ amortized time for appending new data points in updatePrice and $O(1)$ time for random access in priceAt and currentPrice. Using standard Java collections as the underlying "Rep" ensures that the component remains lightweight while benefiting from the robust memory management and efficiency of the Java Collections Framework.
+
+The Convention: The convention (or Representation Invariant) defines the rules that the internal data must follow to be considered a valid Stock object. For this implementation, the ticker string must be non-null and contain at least one character, as an empty symbol does not represent a valid tradeable asset. Furthermore, the history list must be non-null and must never be empty, consistently containing at least the initial price provided at construction. Finally, to maintain financial logic, every integer within the history list must be strictly greater than zero, as a stock price cannot be zero or negative within this mathematical model.
+
+The Correspondence: The correspondence (or Abstraction Function) maps the concrete Java fields to the abstract mathematical model defined in the StockKernel interface. The mathematical ticker string is directly modeled by the contents of the Java String field. The mathematical history, defined as a string of integer, corresponds to the sequence of values stored in the List<Integer>. Specifically, the length of the mathematical string $|this.history|$ is interpreted as the size() of the list, and the $i$-th element of the mathematical string is retrieved from the list index $i$. This clear mapping ensures that the client's abstract understanding of the component perfectly matches the internal state of the implementation.
+
+The Component Diagram: To visualize the architecture of this component, the diagram follows a linear inheritance chain that separates the interface specifications from the implementation logic. At the top, StockKernel defines the math model and primitive operations, which is then extended by the Stock interface to include enhanced functionality. The implementation side begins with the StockSecondary abstract class, which implements Stock and provides the code for all secondary methods. Finally, Stock1L extends StockSecondary, housing the specific Java representation (the String and List) and providing the concrete implementation for the kernel methods.
 
 > To start making your kernel implementation, make a branch off of main in your
 > new repo called something like `kernel-implementation`. There are many ways to
@@ -142,8 +146,6 @@ Below is further rationale/explanation for the rubric items above:
 > rebase strategies described [here](https://stackoverflow.com/questions/35790561/working-while-waiting-for-pending-pr)
 > and [here](https://stackoverflow.com/questions/18021888/continue-working-on-a-git-branch-after-making-a-pull-request).
 
-<!-- TODO: make a new branch from main then delete this comment -->
-
 ## Assignment Tasks
 
 Your primary task for this assignment is to create a kernel implementation that
@@ -162,8 +164,6 @@ The following sections detail everything that you should do once you've
 completed the assignment.
 
 ### Changelog
-
-<!-- TODO: update CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
