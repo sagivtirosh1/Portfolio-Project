@@ -37,12 +37,15 @@ public class Stock1L extends StockSecondary {
      */
 
     /**
-     * Constructor from symbol and initial price.
-     * * @param symbol the ticker symbol
-     * @param initialPrice the starting price in cents
+     * Constructor from symbol and initial price. * @param symbol the ticker
+     * symbol
+     * 
+     * @param initialPrice
+     *            the starting price in cents
      */
     public Stock1L(String symbol, int initialPrice) {
-        assert symbol != null && symbol.length() > 0 : "Violation of: symbol is not empty";
+        assert symbol != null
+                && symbol.length() > 0 : "Violation of: symbol is not empty";
         assert initialPrice > 0 : "Violation of: initialPrice > 0";
         this.createNewRep(symbol, initialPrice);
     }
@@ -51,7 +54,6 @@ public class Stock1L extends StockSecondary {
      * Standard methods -------------------------------------------------------
      */
 
-    @Override
     public final Stock createNewRep() {
         // Since the interface requires an initial price, we use a default
         return new Stock1L("TEMP", 1);
@@ -92,8 +94,8 @@ public class Stock1L extends StockSecondary {
 
     @Override
     public final int priceAt(int timeStep) {
-        assert 0 <= timeStep && timeStep < this.history.size() 
-            : "Violation of: 0 <= timeStep < |this.history|";
+        assert 0 <= timeStep && timeStep < this.history
+                .size() : "Violation of: 0 <= timeStep < |this.history|";
         return this.history.get(timeStep);
     }
 
@@ -105,5 +107,12 @@ public class Stock1L extends StockSecondary {
     @Override
     public final String tickerSymbol() {
         return this.ticker;
+    }
+
+    @Override
+    public Stock newInstance() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException(
+                "Unimplemented method 'newInstance'");
     }
 }
