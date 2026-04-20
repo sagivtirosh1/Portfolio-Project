@@ -85,6 +85,19 @@ the following form: YYYY.0M.0D.
 - Designed a Stock representation component
 - Designed an investing component
 
+## 2026.04.20
+
+### Added
+
+- Designed test suite for Stock component.
+- Designed two different use cases for Stock component.
+
+## Updated
+
+- Changed design to include defensive state-comparison testing within the JUnit suite to accurately verify data integrity without relying on a reference implementation.
+
+- Changed design to include a Portfolio class to demonstrate object composition, and a StockMarketAnalyzer driver to showcase direct client usage of both kernel and secondary methods.
+
 [unreleased]: https://github.com/jrg94/portfolio-project/compare/v2024.08.07...HEAD
 [2024.08.07]: https://github.com/jrg94/portfolio-project/compare/v2024.01.07...v2024.08.07
 [2024.01.07]: https://github.com/jrg94/portfolio-project/releases/tag/v2024.01.07

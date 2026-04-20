@@ -1,8 +1,8 @@
 # Portfolio Part 6: Finishing Touches
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) and delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) and delete this comment -->
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) and delete this comment -->
+- **Name**: Sagiv Tirosh
+- **Dot Number**: tirosh.1
+- **Due Date**: 04/24/2026 @ 11:59PM
 
 ## Assignment Overview
 
@@ -49,8 +49,6 @@ Many of these additional techniques are somewhat out of the scope of this
 course, but just knowing about them could set you up for long term success.
 
 ## Assignment Checklist
-
-<!-- TODO: browse the checklist then delete this comment -->
 
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
@@ -140,8 +138,6 @@ merges, you will need to pull the changes from main into your current branch
 to see them. If you don't like this workflow, you may try following the
 rebase strategies described [here](https://stackoverflow.com/questions/35790561/working-while-waiting-for-pending-pr)
 and [here](https://stackoverflow.com/questions/18021888/continue-working-on-a-git-branch-after-making-a-pull-request).
-
-<!-- TODO: make a new branch from main then delete this comment -->
 
 ## Assignment Tasks
 
@@ -307,18 +303,18 @@ Take some time to fill them out honestly.
 > complete the portfolio project, how much better (or worse) do you think you
 > understand software development and why?
 
-<!-- TODO: discuss -->
+Completing this portfolio project significantly bridged the gap between classroom theory and real-world application. Building the Stock component from scratch forced me to think like a software engineer rather than just a student completing a worksheet. I had to translate a real-world concept financial market data into strict technical contracts using Design-by-Contract principles. Designing the architecture, separating the kernel from secondary methods and understanding how a Portfolio could wrap multiple Stock instances—showed me how enterprise software is actually constructed: layer by layer, with a heavy emphasis on maintainable and encapsulated state.
 
 > Also, did the portfolio project surface any gaps in your own knowledge of
 > software development. If so, what are those gaps and how did you address them?
 
-<!-- TODO: discuss -->
+The biggest gap this project exposed was my reliance on reference implementations for testing. Throughout the semester, checking if my code was correct usually meant comparing it to a pre-existing perfect version. Having to write JUnit tests without that safety net forced me to deeply confront how object state works in Java. I realized I didn't fully grasp how some methods might silently mutate an object's state until I had to test for it. To address this, I adopted a defensive testing strategy, manually setting up expected states and verifying that my methods properly restored the object's variables after execution.
 
 > Finally, as a part of completing the portfolio project, to what extent has
 > your perspective of software development changed, if at all? In other words,
 > is software development something you still enjoy? If not, why not?
 
-<!-- TODO: discuss -->
+My perspective has shifted from seeing programming as writing lines of code to viewing it as designing robust systems. The process of writing tests and handling edge cases was undeniably tedious at times, which was frustrating. However, seeing the final StockMarketAnalyzer and Portfolio classes run flawlessly made that friction worth it. I still enjoy software development, but my enjoyment has matured. It is less about the quick dopamine hit of getting a syntax error to disappear, and more about the deep satisfaction of architecting a reliable, reusable tool.
 
 > One of the challenges of completing the portfolio project is picking up a lot
 > of skills on your own. Some of these skills are, of course, software skills.
@@ -326,29 +322,33 @@ Take some time to fill them out honestly.
 > this process. Therefore, the first question is what skills did you pick up
 > through this process?
 
-<!-- TODO: discuss -->
+Technically, I strengthened my skills in Java, component-based architecture, interface design, and independent JUnit testing. Beyond the code, I developed significant self-directed learning and troubleshooting skills. Because I was building a custom component, I couldn't just look up the exact answer online, I had to learn how to read generic documentation and adapt it to my specific use case. I also improved my ability to translate abstract business logic like moving averages and bullish market sentiment into concrete, testable algorithms.
 
 > The follow-up question is: could you rephrase these skills you picked up
 > as bullet points that you could put on a resume? Try it below.
 
-<!-- TODO: discuss -->
+Architected a custom component-based Java application mapping real-world financial data to technical contracts, utilizing interfaces, abstract classes, and strict encapsulation.
+
+Designed and implemented comprehensive JUnit test suites independently, utilizing state-comparison methodologies to verify data integrity without relying on reference implementations.
+
+Applied Object-Oriented Design principles to create scalable architectures, demonstrating composition by integrating a core data component into a larger portfolio management system.
+
+Translated complex business requirements into mathematical algorithms to calculate financial indicators such as moving averages, historical peaks, and market sentiment.
 
 > Next, how has working on this project affected your career trajectory?
 > In other words, do you now hate the topic you picked? Or, are you even more
 > interested in it? Both outcomes are valuable to your personal development.
 
-<!-- TODO: discuss -->
+Working on the Stock component actually increased my interest in the intersection of software development and finance (FinTech). Seeing how raw data can be manipulated to generate actionable insights (like market sentiment) made the domain feel highly dynamic. It sparked a curiosity about quantitative analysis and algorithmic trading. Rather than deterring me, this project gave me a foundational vocabulary and a technical stepping stone to explore software engineering roles within the financial sector.
 
 > Finally, consider the skills you've picked up and your current career
 > trajectory. What are some things you could do to continue on your
 > career trajectory? Also, who are some mentors you could contact to help
 > you stay on your path?
 
-<!-- TODO: discuss -->
+To continue on this trajectory, my next step is to learn how to connect my Java components to live data streams. I plan to explore REST APIs to pull real-time stock data into my StockMarketAnalyzer instead of hardcoding the prices. I also want to learn about database integration so I can persistently save portfolio data. As for mentors, I plan to reach out to my current computer science professors to discuss elective courses in data analytics or software architecture. Additionally, I can utilize my university's alumni network on LinkedIn to connect with graduates who are currently working as software engineers at FinTech companies to ask for informational interviews.
 
 ### Changelog
-
-<!-- TODO: update CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
